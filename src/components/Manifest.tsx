@@ -102,7 +102,7 @@ export function Manifest({ nodes, projects, m, onHover }: Props) {
     <aside className={cls}>
       <div className="pane index">
         <div className="m-head">
-          <div className="m-title"><span className="big">LUIA</span></div>
+          <div className="m-title"><span className="big">PIERRE</span></div>
 
           <div className="search">
             <input

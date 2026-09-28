@@ -1,6 +1,6 @@
-<img src="docs/preview.jpg" alt="The Luia graph: team knowledge at the centre, project work fanning out around it, with one node selected to show its connections" width="100%">
+<img src="docs/preview.jpg" alt="Pierre: the document index on the left, and the knowledge body on the right, with team knowledge at the centre and each project on its own orbit" width="100%">
 
-# Luia
+# Pierre
 
 **A knowledge graph for design teams.**
 
@@ -10,7 +10,7 @@ component was built one way and not another. It ends up scattered across docs,
 threads, and people's memory, and by the time someone needs it nobody can find
 it.
 
-Luia has two halves:
+Pierre has two halves:
 
 - **An MCP server** that plugs into Claude. Designers and developers install it
   once, and from then on Claude reads the team's conventions before answering
@@ -27,24 +27,24 @@ that folder in git.
 Requires [Node.js](https://nodejs.org) 20.19+ or 22.12+.
 
 ```bash
-git clone https://github.com/gustavocambareri/Luia_MCP.git
-cd Luia_MCP
+git clone https://github.com/gustavocambareri/Pierre_MCP.git
+cd Pierre_MCP
 npm install
 ```
 
-Point Claude at it. `LUIA_KNOWLEDGE_DIR` is the folder your team's Markdown
+Point Claude at it. `PIERRE_KNOWLEDGE_DIR` is the folder your team's Markdown
 lives in — anywhere you like:
 
 ```bash
-claude mcp add luia --scope user \
-  --env LUIA_KNOWLEDGE_DIR="$HOME/luia-knowledge" \
+claude mcp add pierre --scope user \
+  --env PIERRE_KNOWLEDGE_DIR="$HOME/pierre-knowledge" \
   -- node "$PWD/server/index.mjs"
 ```
 
 Verify it connected:
 
 ```bash
-claude mcp list        # luia: … - ✔ Connected
+claude mcp list        # pierre: … - ✔ Connected
 ```
 
 For Claude Desktop, add the same thing to `claude_desktop_config.json`:
@@ -52,10 +52,10 @@ For Claude Desktop, add the same thing to `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "luia": {
+    "pierre": {
       "command": "node",
-      "args": ["/absolute/path/to/luia/server/index.mjs"],
-      "env": { "LUIA_KNOWLEDGE_DIR": "/absolute/path/to/your-knowledge" }
+      "args": ["/absolute/path/to/pierre/server/index.mjs"],
+      "env": { "PIERRE_KNOWLEDGE_DIR": "/absolute/path/to/your-knowledge" }
     }
   }
 }
@@ -83,13 +83,13 @@ capture step with friction is a capture step that doesn't happen.
 The knowledge store is a folder of Markdown files, so sharing it is just git:
 
 ```bash
-cd ~/luia-knowledge
+cd ~/pierre-knowledge
 git init && git add . && git commit -m "Team knowledge"
 git remote add origin git@github.com:your-team/design-knowledge.git
 git push -u origin main
 ```
 
-Teammates clone that repo and point their own `LUIA_KNOWLEDGE_DIR` at it. Pull
+Teammates clone that repo and point their own `PIERRE_KNOWLEDGE_DIR` at it. Pull
 to get everyone's decisions; push to share yours. Decisions arrive as readable
 diffs you can review like any other change.
 

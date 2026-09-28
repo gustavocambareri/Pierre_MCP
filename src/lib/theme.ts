@@ -1,4 +1,4 @@
-// Luia visual language.
+// Pierre visual language.
 //
 // Paper ground, ink strokes, no colour. The instrument on the right is drawn
 // with depth as tone: near strokes are ink, far strokes fade toward FAINT, which

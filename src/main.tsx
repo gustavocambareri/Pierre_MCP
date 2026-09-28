@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
 
-console.log('[Luia] Mounting app...');
+console.log('[Pierre] Mounting app...');
 
 const root = document.getElementById('root');
 if (root) {
@@ -12,7 +12,7 @@ if (root) {
       <App />
     </StrictMode>,
   );
-  console.log('[Luia] App mounted');
+  console.log('[Pierre] App mounted');
 } else {
-  console.error('[Luia] No #root element found');
+  console.error('[Pierre] No #root element found');
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Luia MCP server.
+ * Pierre MCP server.
  *
  * Gives Claude access to a design team's accumulated knowledge: conventions,
  * decisions, and patterns stored as Markdown. Designers install it once and
@@ -20,7 +20,7 @@ import {
   excerpt,
 } from "./knowledge.mjs";
 
-const server = new McpServer({ name: "luia", version: "1.0.0" });
+const server = new McpServer({ name: "pierre", version: "1.0.0" });
 
 const text = (s) => ({ content: [{ type: "text", text: s }] });
 const fail = (s) => ({ content: [{ type: "text", text: s }], isError: true });

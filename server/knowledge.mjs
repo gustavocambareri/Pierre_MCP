@@ -1,5 +1,5 @@
 /**
- * Luia knowledge store.
+ * Pierre knowledge store.
  *
  * One Markdown file per document, YAML frontmatter for metadata. No database:
  * the folder is the store, so a team shares it by putting it in git.
@@ -10,7 +10,11 @@ import matter from "gray-matter";
 
 /** Resolve the knowledge directory. Defaults to ./knowledge next to the repo. */
 export function knowledgeRoot() {
-  return resolve(process.env.LUIA_KNOWLEDGE_DIR ?? "./knowledge");
+  // LUIA_KNOWLEDGE_DIR is the name from before the rename; installs that still
+  // set it keep working.
+  return resolve(
+    process.env.PIERRE_KNOWLEDGE_DIR ?? process.env.LUIA_KNOWLEDGE_DIR ?? "./knowledge",
+  );
 }
 
 /**
